@@ -1,6 +1,42 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oom.halo</groupId>
   <artifactId>LEDHaloDisplay</artifactId>
   <version>0.5.0</version>
+ <packaging>jar</packaging>
+ 
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+ 
+  <dependencies>
+  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  	<dependency>
+  		<groupId>com.pi4j</groupId>
+  		<artifactId>pi4j-core</artifactId>
+  		<version>1.1-SNAPSHOT</version>
+  	</dependency>
+  	<!--  have to added devices also possible!!!!  -->
+  </dependencies>
+  <!--  Anil: Note , {i4j was not published to maven central repository (had only 0.5) 
+  so i have to add the repo containsing snapshot
+   -->
+  <repositories>
+	<repository>
+		<id>oss-snapshots-repo</id>
+		<name>Sonatype OSS Maven Repository</name>
+		<url>https://oss.sonatype.org/content/groups/public</url>
+		<snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</snapshots>
+	</repository>
+</repositories>
 </project>
